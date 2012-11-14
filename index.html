@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jquery-treeview-menu</title>
+    <link type="text/css" href="lib/jquery.treeview.css" rel="stylesheet" />
+    <link type="text/css" href="jquery-treeview-menu.css" rel="stylesheet" />
+    <style type="text/css">
+        .tvm-root { border: 1px solid #ccc; }
+        .tvm-container {border: 1px solid #ccc; }
+    </style>
+    <script type="text/javascript" src="lib/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.treeview.js"></script>
+    <script type="text/javascript" src="jquery-treeview-menu.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#menu").treeviewMenu({
+                content: $("#dataSource").html(),
+                chooseText: "Net Service"
+            }).change(function () {
+                alert($(this).treeviewMenu("getSelection").text);
+            });
+        });
+    </script>
+</head>
+<body>
+<h1>jquery-treeview-menu</h1>
+
+<div id="menu"></div>
+<div id="dataSource" style="display: none;">
+<ul>
+    <li><a href="#">Social</a>
+    <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Myspace</a></li>
+        <li><a href="#">Twitter</a></li>
+    </ul>
+    </li>
+    <li><a href="#">Search</a>
+    <ul>
+        <li><a href="#">Google</a>
+        <ul>
+            <li><a href="#">Google Map</a></li>
+            <li><a href="#">Google Code</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Yahoo</a></li>
+    </ul>
+    </li>
+</ul>
+</div>
+</body>
+</html>
